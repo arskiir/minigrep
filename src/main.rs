@@ -1,6 +1,6 @@
 use std::{env, process};
 
-use my_minigrep::Config;
+use superior_minigrep::Config;
 
 fn main() {
     let config = Config::build(env::args()).unwrap_or_else(|err| {
@@ -8,7 +8,7 @@ fn main() {
         process::exit(1);
     });
 
-    if let Err(e) = my_minigrep::run(&config) {
+    if let Err(e) = superior_minigrep::run(&config) {
         eprintln!("Application error: {e}");
         process::exit(1);
     }
